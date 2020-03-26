@@ -1,0 +1,21 @@
+.home-head{
+   position: relative;
+   color: #fff;
+}
+
+.logo-wrap{
+	display: inline-block;
+	width: 10%;
+	height: 46px;
+	text-align: center;
+	font-style: italic;
+	font-size: 22px;
+}
+
+.right-part{
+	position: absolute;
+	right: 0;
+}
+.right-part>li{
+	padding-left: 20px;
+}
