@@ -1,0 +1,49 @@
+.home-lunbo{
+	height: 40%;
+	/* background-color: rosybrown; */
+}
+
+.item-lunbo{
+	width: 100%;
+	height: 100%;
+	position: relative;
+
+}
+
+.first-demo{
+	width: 100%;
+	height: 100%;
+}
+
+.sencod-lunbo{
+	width: 76%;
+	height: 100%;
+	position: absolute;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.second-demo{
+	width: 100%;
+	height: 98%;
+}
+
+.home-contain{
+	width: 100%;
+	padding: 10px 12%;
+}
+
+.extension-wrap ul{
+   display: flex;
+   justify-content: space-between;
+}
+
+.extension-wrap li{
+	width: 212px;
+	height: 162px;
+}
+
+.extension-wrap li img{
+	width: 212px;
+	height: 162px;
+}

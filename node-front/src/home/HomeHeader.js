@@ -9,8 +9,9 @@ const { SubMenu } = Menu;
 class HomeHeader extends React.Component {
 	constructor() {
 		super();
+		this.beginBgc=localStorage.getItem("userInfo").length>0?"loginHead":"notLoginHead";
 		this.state = {
-			headSyle:"notLoginHead"
+			headSyle:this.beginBgc
 		}
 	}
 

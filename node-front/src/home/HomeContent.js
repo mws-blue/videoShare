@@ -12,7 +12,7 @@ class HomeContent extends React.Component {
 	
 	render() {
 		if (this.props.currentPage === "main") {
-			if(localStorage.getItem("userInfo")>0){
+			if(localStorage.getItem("userInfo").length>0){
               return(
 				  //登录首页
                   <LoginMain />
