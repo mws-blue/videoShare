@@ -6,8 +6,42 @@
 ul{
 	display: inline-block;
 	list-style: none;
+
 }
 
 ul>li{
 	display: inline-block;
+}
+
+a{
+	text-decoration: none;
+	color: #fff;
+}
+
+.project-content{
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	background-color:#EFF1F3 !important;
+}
+
+.head-layui{
+	background-color: transparent !important;
+	/* opacity:0.8; */
+	z-index: 10;
+}
+
+.ant-menu-horizontal > .ant-menu-item{
+	border-bottom:0px !important;
+}
+
+.content-layui{
+	width: 100vw;
+	background-color: #fff !important;
+}
+
+.fixedTop{
+	width: 100vw;
+	position: absolute;
+	top:0;
 }

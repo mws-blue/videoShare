@@ -1,21 +1,59 @@
-.home-head{
-   position: relative;
-   color: #fff;
+/* 没有登录 */
+.notLoginHead {
+	position: relative;
+	color: #fff !important;
+	height: 64px;
+}
+/* 没有登录 */
+.notLoginHead .head-menu {
+	color: #fff !important;
 }
 
-.logo-wrap{
+/* 登录 */
+.loginHead {
+	position: relative;
+	color: #000 !important;
+	/* background-color: #fff !important; */
+}
+
+/* 登录 */
+.loginHead .head-menu {
+	color: #000 !important;
+	/* background-color: #fff !important; */
+}
+
+.notLoginHead .head-menu {
+	display: inline-block;
+	height: 64px;
+	/* color: #fff; */
+	/* 去掉元素背景 */
+	background-color: transparent;
+}
+
+.loginHead .head-menu {
+	display: inline-block;
+	height: 64px;
+	/* color: #fff; */
+	/* 去掉元素背景 */
+	background-color: transparent;
+}
+
+.logo-wrap {
 	display: inline-block;
 	width: 10%;
-	height: 46px;
+	height: 64px;
 	text-align: center;
 	font-style: italic;
 	font-size: 22px;
 }
 
-.right-part{
+.right-part {
 	position: absolute;
 	right: 0;
+	margin: 0;
+	padding: 0;
 }
-.right-part>li{
+
+.right-part>li {
 	padding-left: 20px;
 }

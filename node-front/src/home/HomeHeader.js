@@ -1,61 +1,106 @@
 import React from "react";
 import { Menu } from 'antd';
-import "./Home.css"
+
+import "./Home.css";
+import RihgtHead from "./RihgtHead";
 
 const { SubMenu } = Menu;
 
 class HomeHeader extends React.Component {
 	constructor() {
 		super();
+		this.state = {
+			headSyle:"notLoginHead"
+		}
 	}
 
 	handleClick = e => {
-		console.log('click ', e);
+		
+		console.log('click ', e.key);
+		//改变内容
 		this.props.change.changePage(e.key);
+
+        //改变头部样式 点首页并且有存用户信息
+		if(e.key==="main"){
+			//点首页没有登录
+			if(localStorage.getItem("userInfo").length <= 0){
+				this.props.change.changeTop("fixedTop");
+				//设置头部样式
+				this.setState({headSyle:"notLoginHead"});
+			}else{
+				// 点首页登录
+				this.props.change.changeTop("content-layui");
+                //设置头部样式
+				this.setState({headSyle:"loginHead"});
+			}
+			
+		}else{
+			//其他
+			this.props.change.changeTop("content-layui");
+
+			//设置头部样式
+			this.setState({headSyle:"loginHead"});
+		}
 	};
 
 	handleChange = e =>{
+
+		//设置头部样式
+		this.setState({headSyle:"loginHead"});
+
 		console.log(e.target.id);
+		if(e.target.id ==="vip"){
+			this.props.change.changePage("main");
+			// this.props.change.changeTop("fixedTop");
+		}
 		this.props.change.changePage(e.target.id);
+
+		//全传content-layui  不让内容置顶
+		this.props.change.changeTop("content-layui");
+	}
+
+	//退出  由RigHthead触发
+	handleReback(e){
+		console.log("触发函数没有")
+		this.props.change.changePage(e);
+		this.props.change.changeTop("fixedTop");
+
+		//设置头部样式
+		this.setState({headSyle:"notLoginHead"});
 	}
 
 	render() {
 		return (
-			<div className="home-head" style={{ height: "46px" }}>
+			<div className={this.state.headSyle}>
 				<span className="logo-wrap">新片场</span>
-				<Menu style={{ display: "inline-block" }} onClick={this.handleClick} mode="horizontal">
+				<Menu style={{borderStyle:"none"}} className="head-menu" onClick={this.handleClick} mode="horizontal">
 					<Menu.Item key="main"> 首页</Menu.Item>
 
 					<SubMenu title={<span className="submenu-title-wrapper">发现</span>}>
 						<Menu.ItemGroup title="作品">
-							<Menu.Item key="setting:1">广告</Menu.Item>
-							<Menu.Item key="setting:2">宣传片</Menu.Item>
+							<Menu.Item key="main1">广告</Menu.Item>
+							<Menu.Item key="main2">宣传片</Menu.Item>
 						</Menu.ItemGroup>
-						<Menu.Item key="wenzhang">文章</Menu.Item>
+						<Menu.Item key="main3">文章</Menu.Item>
 					</SubMenu>
 					<Menu.Item key="find">找人/机构</Menu.Item>
-					<Menu.Item key="school">学院</Menu.Item>
-					<Menu.Item key="happy">快活</Menu.Item>
+					<Menu.Item key="main4">学院</Menu.Item>
+					<Menu.Item key="main5">快活</Menu.Item>
 					<Menu.Item key="material">正版素材</Menu.Item>
 					<SubMenu title={<span className="submenu-title-wrapper">活动</span>}>
-						<Menu.Item key="setting:7">电影季</Menu.Item>
-						<Menu.Item key="setting:8">创作吧少年</Menu.Item>
-						<Menu.Item key="setting:9">VEW VISION毕业季 </Menu.Item>
-						<Menu.Item key="setting:10">更多</Menu.Item>
+						<Menu.Item key="main6">电影季</Menu.Item>
+						<Menu.Item key="main7">创作吧少年</Menu.Item>
+						<Menu.Item key="main8">VEW VISION毕业季 </Menu.Item>
+						<Menu.Item key="main9">更多</Menu.Item>
 					</SubMenu>
 					<SubMenu title={<span className="submenu-title-wrapper">更多</span>}>
-						<Menu.Item key="setting:1">新片场影业</Menu.Item>
-						<Menu.Item key="setting:2">新片场短视频</Menu.Item>
-						<Menu.Item key="setting:1">新片场营销 </Menu.Item>
-						<Menu.Item key="setting:2">下载App</Menu.Item>
+						<Menu.Item key="main10">新片场影业</Menu.Item>
+						<Menu.Item key="main11">新片场短视频</Menu.Item>
+						<Menu.Item key="main12">新片场营销 </Menu.Item>
+						<Menu.Item key="main13">下载App</Menu.Item>
 					</SubMenu>
 				</Menu>
-				<ul onClick={this.handleChange} className="right-part">
-						<li id="vip">会员</li>
-						<li id="sousuo">搜索</li>
-						<li id="login">登录</li>
-						<li id="register">注册</li>
-					</ul>
+				<RihgtHead headThis={this} />
 			</div>
 		)
 	}

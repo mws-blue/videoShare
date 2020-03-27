@@ -1,7 +1,7 @@
 const mysql = require("mysql");
 
 const pool = mysql.createPool({
-	database:"stage6",
+	database:"videoShare",
 	host:"localhost",
 	port:3306,
 	user:"root",

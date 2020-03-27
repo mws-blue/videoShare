@@ -16,6 +16,16 @@ app.use("/*",function(req,res,next){
 	next();
 })
 
+const userController =new (require("./controller/UserController")) ();
+
+app.post("/user.do",function(req,res){
+	
+	let method = req.body.method;
+	if(method == "login"){
+       userController.login(req,res);
+	}
+})
+
 
 //上传文件
 app.post("/profile",upload.single("fileData"),function(req,res,next){
