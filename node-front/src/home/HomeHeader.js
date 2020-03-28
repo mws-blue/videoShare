@@ -9,22 +9,23 @@ const { SubMenu } = Menu;
 class HomeHeader extends React.Component {
 	constructor() {
 		super();
-		this.beginBgc=localStorage.getItem("userInfo").length>0?"loginHead":"notLoginHead";
+		this.beginBgc=localStorage.getItem("userInfo") !=null?"loginHead":"notLoginHead";
 		this.state = {
 			headSyle:this.beginBgc
 		}
 	}
 
 	handleClick = e => {
-		
+	
 		console.log('click ', e.key);
+
 		//改变内容
 		this.props.change.changePage(e.key);
 
         //改变头部样式 点首页并且有存用户信息
 		if(e.key==="main"){
 			//点首页没有登录
-			if(localStorage.getItem("userInfo").length <= 0){
+			if(localStorage.getItem("userInfo")===null ||localStorage.getItem("userInfo")==="" ||localStorage.getItem("userInfo")===undefined){
 				this.props.change.changeTop("fixedTop");
 				//设置头部样式
 				this.setState({headSyle:"notLoginHead"});
@@ -50,10 +51,6 @@ class HomeHeader extends React.Component {
 		this.setState({headSyle:"loginHead"});
 
 		console.log(e.target.id);
-		if(e.target.id ==="vip"){
-			this.props.change.changePage("main");
-			// this.props.change.changeTop("fixedTop");
-		}
 		this.props.change.changePage(e.target.id);
 
 		//全传content-layui  不让内容置顶
@@ -61,9 +58,10 @@ class HomeHeader extends React.Component {
 	}
 
 	//退出  由RigHthead触发
-	handleReback(e){
-		console.log("触发函数没有")
-		this.props.change.changePage(e);
+	handleReback(a){
+		
+		this.props.change.changePage(a);
+		
 		this.props.change.changeTop("fixedTop");
 
 		//设置头部样式

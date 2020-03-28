@@ -12,7 +12,9 @@ class HomeContent extends React.Component {
 	
 	render() {
 		if (this.props.currentPage === "main") {
-			if(localStorage.getItem("userInfo").length>0){
+			if(localStorage.getItem("userInfo")!== null && localStorage.getItem("userInfo") !=="" &&localStorage.getItem("userInfo")!==undefined){
+				console.log("用户信息"+localStorage.getItem("userInfo"))
+				console.log("触发函数没有"+this.props.currentPage)
               return(
 				  //登录首页
                   <LoginMain />

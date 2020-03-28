@@ -15,25 +15,25 @@ class NotLoginHead extends React.Component {
 	
 	handleClick =e=>{
 		let that = this;
-		if(e.key=== "9"){//退出
+		if(e.key=== "reback"){//退出
 			localStorage.setItem("userInfo","");
-			console.log("已设置空了");
+			console.log("已设置空了"+localStorage.getItem("userInfo"));
 			this.changeMain("main");
 		}
 	}
    
 	//HomeHead触发
-	changeMain(e){
+	changeMain(a){
 		console.log(this.props.headThis);
-		this.props.headThis.handleReback(e);
+		this.props.headThis.handleReback(a);
 	}
 
 	render() {
 		//没有登录时右侧的格式
-		if (localStorage.getItem("userInfo").length<=0) {
+		if (localStorage.getItem("userInfo")===null ||localStorage.getItem("userInfo")===""||localStorage.getItem("userInfo")===undefined) {
 			return (
 				<ul onClick={this.handleChange.bind(this)} className="right-part">
-					<li id="vip">会员</li>
+					<li>会员</li>
 					<li id="sousuo">搜索</li>
 					<li id="login">登录</li>
 					<li id="register">注册</li>
@@ -54,7 +54,7 @@ class NotLoginHead extends React.Component {
 						<Menu.Item key="5">我的素材</Menu.Item>
 						<Menu.Item key="7">我的购物车 </Menu.Item>
 						<Menu.Item key="8">认证</Menu.Item>
-						<Menu.Item key="9">退出</Menu.Item>
+						<Menu.Item key="reback">退出</Menu.Item>
 					</SubMenu>
 				</Menu>
 					</li>
