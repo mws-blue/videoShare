@@ -37,9 +37,10 @@ class Login extends React.Component {
 			},
 			success(res) {
 				let userInfo = JSON.parse(res);
+				console.log("用户信息")
+				console.log(userInfo);
 				console.log(userInfo.userName)
 				
-				// localStorage.setItem("userInfo", "");
 				localStorage.setItem("userInfo", userInfo);
 				that.props.change.changePage("main");
 			}

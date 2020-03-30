@@ -1,5 +1,6 @@
 import React from "react";
 import "./NotLoginMain.css";
+import bg from "../video/bg.mp4";
 
 class NotLoginMain extends React.Component{
     constructor(){
@@ -10,7 +11,7 @@ class NotLoginMain extends React.Component{
 		return(
 			<div className="video-wrap">
 				<video className="bgd-video"   loop muted autoPlay>
-				  <source src="https://qiniu-xpc0.xpccdn.com/5a9ce9df6bab2.mp4" type="video/mp4"/>  
+				  <source src={bg} type="video/mp4"/> 
 				</video>
 				<div className="home-flag">
 					<p style={{width:"100%",textAlign:"center",fontSize:"50px"}}>用作品打动世界</p>
