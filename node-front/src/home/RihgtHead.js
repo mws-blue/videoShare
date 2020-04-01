@@ -1,6 +1,9 @@
 import React from "react";
 import { Menu } from 'antd';
+import avatar from "../img/avatar.jpg";
+
 const { SubMenu } = Menu;
+
 
 class NotLoginHead extends React.Component {
 	constructor() {
@@ -47,7 +50,7 @@ class NotLoginHead extends React.Component {
 					<li>消息</li>
 					<li>
 					<Menu  style={{borderStyle:"none"}} className="head-menu" onClick={this.handleClick} mode="horizontal">
-					<SubMenu title={<span className="submenu-title-wrapper">头像</span>}>
+					<SubMenu title={<span className="submenu-title-wrapper"><img style={{width:"28px",height:"28px",borderRadius:"50%"}} src={avatar}/></span>}>
 						<Menu.Item key="1">个人主页</Menu.Item>
 						<Menu.Item key="2">收藏夹</Menu.Item>
 						<Menu.Item key="3">私密视频 </Menu.Item>

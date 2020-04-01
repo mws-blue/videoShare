@@ -1,17 +1,48 @@
 import React from "react";
 import { Carousel } from 'antd';
+import $ from "jquery";
 
 import "./LoginMain.css";
-import lironghao from "../video/lironghao.mp4";
 import avatar from "../img/avatar.jpg";
-
+//下面这些视频引入不能删，从数据库查询过来时有用
+// import lironghao from "../video/lironghao.mp4";
+// import video2 from "../video/video2.mp4";
+// import Cellos from "../video/Cellos-Mombasa.mp4";
+// import video3 from "../video/video3.mp4";
+// import video4 from "../video/video4.mp4";
+// import Secrete from "../video/Secrete.mp4";
+// import Sunrise from "../video/Sunrise.mp4";
 
 class LoginMain extends React.Component {
 	constructor() {
-		super()
+		super();
+		this.state = {
+			videoMain: []
+		}
+	}
+	//页面加载完毕后请求
+	componentDidMount() {
+		let that = this;
+		$.ajax({
+			url: "/video.do",
+			type: "post",
+			dataType: "json",
+			data: {
+				method: "getMainVideo"
+			},
+			success(result) {
+				that.setState({videoMain:result})
+			}
+		})
+	}
+
+	lookVideo(v) {
+		console.log(this)
+		this.props.change.changePage("videoItem",v);
 	}
 
 	render() {
+		let thats = this;
 		return (
 			<div>
 				<Carousel className="home-lunbo" autoplay>
@@ -67,188 +98,41 @@ class LoginMain extends React.Component {
 
 					<div>
 						<h3 className="video-theme">
-							<span>编辑精选</span>
+							<span>MV精选</span>
 							<span>STAFF PICKS</span>
 						</h3>
 						<div className="video-contain">
-							<div className="itemvideo-box">
-								<div>
-									<video className="bgd-video" loop muted>
-										<source src={lironghao} type="video/mp4" />
-										您的浏览器不支持video标签
-									</video>
-								</div>
-								<div className="item-desc">
-									<p className='video-title'>李荣浩-等着等着就变老了</p>
-									<p className="video-type">
-										<span>音乐</span>
-										<span>MV</span>
-									</p>
-									<div className="user-info">
-										<a className='user-link' href="#">
-											<img className="user-avatar" src={avatar} />
-											<span className="name">李荣浩</span>
-										</a>
-										<span className="role">音乐人</span>
-									</div>
-								</div>
-							</div>
-							<div className="itemvideo-box">
-								<div>
-									<video className="bgd-video" loop muted>
-										<source src={lironghao} type="video/mp4" />
-										您的浏览器不支持video标签
-									</video>
-								</div>
-								<div className="item-desc">
-									<p className='video-title'>李荣浩-等着等着就变老了</p>
-									<p className="video-type">
-										<span>音乐</span>
-										<span>MV</span>
-									</p>
-									<div className="user-info">
-										<a className='user-link' href="#">
-											<img className="user-avatar" src={avatar} />
-											<span className="name">李荣浩</span>
-										</a>
-										<span className="role">音乐人</span>
-									</div>
-								</div>
-							</div>
-							<div className="itemvideo-box">
-								<div>
-									<video className="bgd-video" loop muted>
-										<source src={lironghao} type="video/mp4" />
-										您的浏览器不支持video标签
-									</video>
-								</div>
-								<div className="item-desc">
-									<p className='video-title'>李荣浩-等着等着就变老了</p>
-									<p className="video-type">
-										<span>音乐</span>
-										<span>MV</span>
-									</p>
-									<div className="user-info">
-										<a className='user-link' href="#">
-											<img className="user-avatar" src={avatar} />
-											<span className="name">李荣浩</span>
-										</a>
-										<span className="role">音乐人</span>
-									</div>
-								</div>
-							</div>
-							<div className="itemvideo-box">
-								<div>
-									<video className="bgd-video" loop muted>
-										<source src={lironghao} type="video/mp4" />
-										您的浏览器不支持video标签
-									</video>
-								</div>
-								<div className="item-desc">
-									<p className='video-title'>李荣浩-等着等着就变老了</p>
-									<p className="video-type">
-										<span>音乐</span>
-										<span>MV</span>
-									</p>
-									<div className="user-info">
-										<a className='user-link' href="#">
-											<img className="user-avatar" src={avatar} />
-											<span className="name">李荣浩</span>
-										</a>
-										<span className="role">音乐人</span>
-									</div>
-								</div>
-							</div>
-							<div className="itemvideo-box">
-								<div>
-									<video className="bgd-video" loop muted>
-										<source src={lironghao} type="video/mp4" />
-										您的浏览器不支持video标签
-									</video>
-								</div>
-								<div className="item-desc">
-									<p className='video-title'>李荣浩-等着等着就变老了</p>
-									<p className="video-type">
-										<span>音乐</span>
-										<span>MV</span>
-									</p>
-									<div className="user-info">
-										<a className='user-link' href="#">
-											<img className="user-avatar" src={avatar} />
-											<span className="name">李荣浩</span>
-										</a>
-										<span className="role">音乐人</span>
-									</div>
-								</div>
-							</div>
-							<div className="itemvideo-box">
-								<div>
-									<video className="bgd-video" loop muted>
-										<source src={lironghao} type="video/mp4" />
-										您的浏览器不支持video标签
-									</video>
-								</div>
-								<div className="item-desc">
-									<p className='video-title'>李荣浩-等着等着就变老了</p>
-									<p className="video-type">
-										<span>音乐</span>
-										<span>MV</span>
-									</p>
-									<div className="user-info">
-										<a className='user-link' href="#">
-											<img className="user-avatar" src={avatar} />
-											<span className="name">李荣浩</span>
-										</a>
-										<span className="role">音乐人</span>
-									</div>
-								</div>
-							</div>
-							<div className="itemvideo-box">
-								<div>
-									<video className="bgd-video" loop muted>
-										<source src={lironghao} type="video/mp4" />
-										您的浏览器不支持video标签
-									</video>
-								</div>
-								<div className="item-desc">
-									<p className='video-title'>李荣浩-等着等着就变老了</p>
-									<p className="video-type">
-										<span>音乐</span>
-										<span>MV</span>
-									</p>
-									<div className="user-info">
-										<a className='user-link' href="#">
-											<img className="user-avatar" src={avatar} />
-											<span className="name">李荣浩</span>
-										</a>
-										<span className="role">音乐人</span>
-									</div>
-								</div>
-							</div>
-							<div className="itemvideo-box">
-								<div>
-									<video className="bgd-video" loop muted>
-										<source src={lironghao} type="video/mp4" />
-										您的浏览器不支持video标签
-									</video>
-								</div>
-								<div className="item-desc">
-									<p className='video-title'>李荣浩-等着等着就变老了</p>
-									<p className="video-type">
-										<span>音乐</span>
-										<span>MV</span>
-									</p>
-									<div className="user-info">
-										<a className='user-link' href="#">
-											<img className="user-avatar" src={avatar} />
-											<span className="name">李荣浩</span>
-										</a>
-										<span className="role">音乐人</span>
-									</div>
-								</div>
-							</div>
+							{   //遍历循环渲染数据
+						        this.state.videoMain.map(function (v, i) {
+									console.log(v.vUrl)
+									return (
+										<div key={i} className="itemvideo-box">
+											<div onClick={thats.lookVideo.bind(thats,v)}>
+												<video className="bgd-video" loop muted>
+													<source src={require('../' + v.vUrl)} type="video/mp4" />
+																您的浏览器不支持video标签
+															</video>
+											</div>
+											<div className="item-desc">
+									<p className='video-title'>{v.vName}</p>
+												<p className="video-type">
+													<span>音乐</span>
+													<span>MV</span>
+												</p>
+												<div className="user-info">
+													<a className='user-link' href="#">
+														<img className="user-avatar" src={avatar} />
+									<span className="name">{v.userName}</span>
+													</a>
+													<span className="role">音乐人</span>
+												</div>
+											</div>
+										</div>
+									)
+								})
+							}
 						</div>
-						
+
 					</div>
 				</div>
 			</div>

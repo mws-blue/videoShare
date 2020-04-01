@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import { Layout } from 'antd';
-import $ from "jquery";
 
 import HomeHeader from "./home/HomeHeader";
 import HomeContent from "./home/HomeContent";
@@ -14,15 +13,16 @@ class App extends React.Component {
     this.begin = localStorage.getItem("userInfo")!=null?"content-layui":"fixedTop"
     this.state={
       page:"main",
-      setclass:this.begin
+      setclass:this.begin,
+      item:""
     }
     console.log("用户信息")
     console.log(localStorage.getItem("userInfo"))
   }
 
-  changePage(mypage){
+  changePage(mypage,item){
    
-    this.setState({page:mypage})
+    this.setState({page:mypage,item:item})
   }
 
   changeTop(a){

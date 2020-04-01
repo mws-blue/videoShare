@@ -3,6 +3,7 @@ import React from "react";
 import NotLoginMain from "../main/NoLoginMain";
 import LoginMain from "../main/LoginMain";
 import Login from "../login/Login";
+import VideoItem from "../videoDesc/VideoItem"
 
 
 class HomeContent extends React.Component {
@@ -17,7 +18,7 @@ class HomeContent extends React.Component {
 				console.log("触发函数没有"+this.props.currentPage)
               return(
 				  //登录首页
-                  <LoginMain />
+                  <LoginMain change={this.props.appThis}/>
 			  )
 			}else{
 				return (
@@ -46,10 +47,16 @@ class HomeContent extends React.Component {
 			return(
 				<div>注册</div>
 			)
-		}else{
+		}else if(this.props.currentPage === "videoItem"){
+			return(
+				//视频详情
+				<VideoItem change={this.props.appThis} />
+			)
+		}
+		else{
 			console.log("进来的是else")
 			return(
-				<LoginMain />
+				<LoginMain change={this.props.appThis}/>
 			)
 		}
 	}
