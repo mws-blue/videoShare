@@ -4,7 +4,7 @@ import NotLoginMain from "../main/NoLoginMain";
 import LoginMain from "../main/LoginMain";
 import Login from "../login/Login";
 import VideoItem from "../videoDesc/VideoItem"
-
+import Register from "../register/Register.js";
 
 class HomeContent extends React.Component {
 	constructor() {
@@ -45,7 +45,7 @@ class HomeContent extends React.Component {
 			)
 		}else if(this.props.currentPage === "register"){
 			return(
-				<div>注册</div>
+				<Register />
 			)
 		}else if(this.props.currentPage === "videoItem"){
 			return(

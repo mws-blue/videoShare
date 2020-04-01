@@ -17,7 +17,8 @@ app.use("/*",function(req,res,next){
 })
 
 const userController =new (require("./controller/UserController")) ();
-
+const homeController = new (require("./controller/HomeController"))();
+//用户登录
 app.post("/user.do",function(req,res){
 	
 	let method = req.body.method;
@@ -26,6 +27,14 @@ app.post("/user.do",function(req,res){
 	}
 })
 
+app.post("/video.do",function(req,res){
+	let method = req.body.method;
+    if(method == "getMainVideo"){//获取首页视频
+		homeController.getMainVideo(req,res);
+	}else if(method == "getItemVideo"){//获取视频详情
+		homeController.getItemVideo(req,res);
+	}
+})
 
 //上传文件
 app.post("/profile",upload.single("fileData"),function(req,res,next){

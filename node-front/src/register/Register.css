@@ -1,7 +1,7 @@
-.bigbox {
+.bigbox{
 	height: 100%;
 	width: 100vw;
-	/* float: left;	 */
+	/* float: left; */	
 }
 .timg{
 	width: 3.125rem;
@@ -9,87 +9,80 @@
 	margin: 0 auto;
 	border-radius: 50%;
 }
-.top {
+.top{
 	height: 20%;
 	width: 100%;
+	/* background-color: #61DAFB; */
 	font-size: 24px;
-	color: #FFFFFF;
-	font-weight: 500;
-	font-variant: small-caps;
-	height: 96px !important;
-	line-height: 96px !important;
-	margin: 0 auto;
+	    color: #FFFFFF;
+	    font-weight: 500;
+	    font-variant: small-caps;
+	    /* background-color: transparent; */
+	    height: 96px !important;
+	    line-height: 96px !important;
+		margin: 0 auto;
 }
-
-.top>img {
+.top>img{
 	height: 26px;
 	width: 15.625rem;
 	padding-left: 10%;
 }
 
-.top>span {
+.top>span{
 	/* font-size: 24px; */
 	color: #FFFFFF;
 	line-height: 0 auto;
 	padding-left: 1%;
-}
-
-.middle {
+	}
+.middle{
 	height: 70%;
 	width: 100%;
 	text-align: center;
+	/* background-color: beige; */
 }
-
-.middlebox {
+.middlebox{
 	height: 36.25rem;
 	width: 22.5rem;
+	/* background-color: #61DAFB; */
 	margin: 0 auto;
 }
-
-.middleboxone {
+.middleboxone{
 	height: 105px;
 	width: auto;
-	margin: 0 auto;
+	margin:0 auto;
 	padding-top: 35px;
 }
-
-.middleboxone>img {
+.middleboxone>img{
 	height: 2rem;
 	width: 7.375rem;
 }
-
-.jsx-1447149503 {
-	letter-spacing: 20px;
-	margin: 12px -20px 32px 0;
+.jsx-1447149503{
+	    letter-spacing: 20px;
+	    margin: 12px -20px 32px 0;
 	font-size: 16px;
-	color: #FFFFFF;
-	font-weight: 300;
-	line-height: 1.5;
-	letter-spacing: 3px;
-	margin: 12px -3px 32px 0;
-	font-variant: small-caps;
-	text-shadow: 0 0 1px #0000003d;
+	    color: #FFFFFF;
+	    font-weight: 300;
+	    line-height: 1.5;
+	    letter-spacing: 3px;
+	    margin: 12px -3px 32px 0;
+	    font-variant: small-caps;
+	    text-shadow: 0 0 1px #0000003d;
 }
-
-.middleboxtwo {
-	height: 14.0625rem;
+.middleboxtwo{
+	height: 20rem;
 	width: 100%;
 	background-color: #FFFFFF;
 }
-
-.denglu {
+.denglu{
 	font-size: 1.125rem;
-	color: #E74B3B;
-	text-decoration: underline;
+	text-decoration:underline;
 }
-
-.buttombox {
+.buttombox{
 	height: auto;
 	width: 18.75rem;
 	margin: 1.875rem;
 }
-
-.middleboxthree {
+.middleboxthree{
 	height: 2.9375rem;
 	width: 100%;
 	background-color: #FAFAFA;
@@ -98,22 +91,19 @@
 	color: #AA9EAA;
 	cursor: pointer;
 }
-
-.middleboxthree::active {
-	color: red;
+.middleboxthree::active{
+	color:red;
 }
-
-.lower {
+.lower{
 	height: 10%;
 	width: 100%;
+	/* background-color: blue; */
 	text-align: center;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin-top: 3.125rem;
-	color: #FFFFFF;
 }
-
-.lower>span {
+.lower>span{
 	font-size: 80%;
-}
+	}
