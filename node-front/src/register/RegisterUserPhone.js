@@ -16,18 +16,18 @@ class RegisterUserPhone extends React.Component{
 	constructor(){
 		super();
 		this.state = {
-			userPhone:""
+			phone:""
 		}
 	}
 
 	handleChange(e){
-		this.setState({userPhone:e.target.value})
+		this.setState({phone:e.target.value})
 		this.props.changeInfo.changeInfos(e);
 	}
 
 	render(){
 		return (	
-		<input type="text" name="userphone" value={this.state.userPhone} placeholder="7-11位" onChange={this.handleChange.bind(this)} />
+		<input type="text" name="phone" value={this.state.phone} placeholder="7-11位" onChange={this.handleChange.bind(this)} />
 		// <div style={{ marginBottom: 16,marginTop:18 }}>
 		// 		<Input style={{maxLength:300,height:40}} addonBefore={selectBefore} defaultValue="手机号" onChange={this.handleChange.bind(this)} />
 		// </div>

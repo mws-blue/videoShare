@@ -45,7 +45,7 @@ class HomeContent extends React.Component {
 			)
 		}else if(this.props.currentPage === "register"){
 			return(
-				<Register />
+				<Register change={this.props.appThis}/>
 			)
 		}else if(this.props.currentPage === "videoItem"){
 			return(

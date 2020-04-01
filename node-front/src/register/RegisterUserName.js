@@ -27,7 +27,7 @@ class RegisterUserName extends React.Component{
 
 	render(){
 		return (	
-		<input type="text" name="username" value={this.state.userName} placeholder="不能包含特殊字符" onChange={this.handleChange.bind(this)} />
+		<input type="text" name="username" value={this.state.userName} placeholder="请输入用户名" onChange={this.handleChange.bind(this)} />
 		// <div style={{ marginBottom: 16,marginTop:18 }}>
 		// 		<Input style={{maxLength:300,height:40}} addonBefore={selectBefore} defaultValue="手机号" onChange={this.handleChange.bind(this)} />
 		// </div>

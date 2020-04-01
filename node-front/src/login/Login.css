@@ -117,3 +117,10 @@
 .lower>span {
 	font-size: 80%;
 }
+
+.login-button{
+	width: 100px;
+	margin-top: 20px;
+	background-color: #E74B3B;
+	color: #fff;
+}

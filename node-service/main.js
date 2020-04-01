@@ -24,6 +24,9 @@ app.post("/user.do",function(req,res){
 	let method = req.body.method;
 	if(method == "login"){
        userController.login(req,res);
+	}else if(method == "register"){
+		// console.log("后端注册"+req.body.userName,req.body.passWord,req.body.phone)
+		userController.register(req,res);
 	}
 })
 

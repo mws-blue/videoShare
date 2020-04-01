@@ -3,7 +3,6 @@ import $ from "jquery";
 import LoginUserName from "./LoginUserName";
 import LoginUserPassword from "./LoginUserPassword";
 import './Login.css';
-import { Input, Select,Button } from 'antd';
 import Logo from "../img/logo.png";
 import Timg from "../img/timg.jpg";
 
@@ -52,25 +51,7 @@ class Login extends React.Component {
 
 	render() {
 		return (
-			// <div className="login-page">
-			// 	<div>
-			// 		<div>
-			// 			<span>密码登录</span>
-			// 			<span>短信登录</span>
-			// 			<div className="loginForm">
-			// 				<div className="eleItem">
-			// 					<label>登录名：</label><LoginUserName changeInfo={this}/>
-			// 				</div>
-			// 				<div className="eleItem">
-			// 					<label>密&nbsp;码：</label><LoginUserPassword changeInfo={this}/>
-			// 				</div>
-			// 				<div className="btnItem">
-			// 					<input type="submit" name="button" id="button" value="提交" onClick={this.login.bind(this)} />
-			// 				</div>
-			// 			</div>
-			// 		</div>
-			// 	</div>
-			// </div>
+			
 			<div className="bigbox" style={{backgroundImage: "url(" + require("../img/beijing.jpg") + ")"}}>
 			    <div className="top">
 					      <img src={Logo} />
@@ -93,12 +74,10 @@ class Login extends React.Component {
 								      <label>用户名：</label><LoginUserName changeInfo={this}/>
 									  <br/>
 									  <br/>
-									  <label>密&nbsp;码：</label><LoginUserPassword changeInfo={this}/>
-								      
-								      <Button style={{marginTop:20,backgroundColor:"#E74B3B"}} type="bink in" block danger 
-									        onClick={this.login.bind(this)}>
-								            登录
-								          </Button>
+									  <label>密&nbsp;&nbsp;&nbsp;码：</label><LoginUserPassword changeInfo={this}/>
+								      <br/>
+									  <br/>
+								      <input className="login-button" type="button" value="登录" onClick={this.login.bind(this)}></input>
 									  </div>
 								  </div>
 							      
