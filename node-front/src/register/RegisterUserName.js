@@ -12,7 +12,7 @@ const selectBefore = (
   </Select>
 );
 
-class LoginUserName extends React.Component{
+class RegisterUserName extends React.Component{
 	constructor(){
 		super();
 		this.state = {
@@ -35,4 +35,4 @@ class LoginUserName extends React.Component{
 	}
 }
 
-export default LoginUserName;
+export default RegisterUserName;

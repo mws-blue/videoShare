@@ -1,6 +1,6 @@
 import React from "react";
 import { Input } from 'antd';
-class LoginUserPassword extends React.Component{
+class RegisterUserPassword extends React.Component{
 	constructor(){
 		super();
 		this.state = {
@@ -23,4 +23,4 @@ class LoginUserPassword extends React.Component{
 
 }
 
-export default LoginUserPassword;
+export default RegisterUserPassword;
