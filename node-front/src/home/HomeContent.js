@@ -6,6 +6,7 @@ import Login from "../login/Login";
 import VideoItem from "../videoDesc/VideoItem"
 import Register from "../register/Register.js";
 import Find from "../find/Find";
+import Material from "../material/material.js";
 
 class HomeContent extends React.Component {
 	constructor() {
@@ -33,7 +34,7 @@ class HomeContent extends React.Component {
 			)
 		}else if(this.props.currentPage === "material"){
 			return(
-				<div>正版素材</div>
+				<Material/>
 			)
 		}else if(this.props.currentPage === "sousuo"){
 			return(

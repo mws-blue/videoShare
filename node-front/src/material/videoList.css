@@ -1,0 +1,75 @@
+.main-wrapper {
+    position: relative;
+    padding: 25px 0;
+    min-width: 1180px;
+    margin: 0 auto;
+}
+
+.page-title {
+    position: relative;
+}
+
+.allwork-title {
+    position: relative;
+    font-size: 24px;
+    line-height: 33px;
+    margin-bottom: 8px;
+}
+
+#resource-tab {
+    height: 46px;
+    line-height: 46px;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.resourseul {
+    list-style-type: none;
+    text-align: center;
+    border: 1px solid #f0f0f0;
+}
+
+.resourseul li:first-child {
+    border-radius: 2px 0 0 2px;
+}
+
+.resourseul li {
+    padding: 0 16px;
+    border: 1px solid #f0f0f0;
+}
+
+.resourseul li:last-child {
+    border-radius: 0 2px 2px 0;
+    border-right: 0;
+}
+
+.changecontent {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.search-container {
+    position: relative;
+    width: 1140px;
+    height: 100%;
+    margin: 0 auto;
+    z-index: 10;
+}
+
+.block {
+    display: block;
+}
+
+.none {
+    display: none;
+}
+
+.red {
+    background-color: red;
+    color: white;
+}
+
+.white {
+    background-color: white;
+    color: #000000;
+}
