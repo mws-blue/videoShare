@@ -1,0 +1,152 @@
+.bg{
+    width: 100vw;
+    height: 100rem;
+    background-color: #F7F7F7;
+}
+.find{
+width: 85%;
+height: 50rem;
+margin:auto;
+background-color:#F7F7F7;
+}
+.body{
+    background-color: #F7F7F7;
+}
+.find-top{
+    height: 12rem;
+    margin: auto;
+    position: relative;
+    top: 2rem;
+    background-color: white;
+    margin-bottom: 2.5rem;
+}
+.find-top-bar{
+    width: 20rem;
+    height: 3rem;
+    font-size: 0.9rem;
+    display: flex;
+    margin-bottom: 0.2rem;
+    align-items: center;
+    margin-left: 1rem;
+}
+.find-top-bar div{
+width: 5rem;
+text-align: center;
+height: 2rem;
+margin-left: 1.5rem;
+line-height: 2rem;
+}
+.find-top-bar #find-top-bar-one {
+background-color: #E74B3B;
+color: white;
+}   
+.find-top-contain div{
+    width: 3.5rem;
+    text-align: center;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+} 
+.find-top-box{
+
+}              
+.find-top-contain{
+    display: flex;
+    background-color:#F7F7F7 ;
+    width: 67rem;
+    margin: auto;
+    height: 7rem;
+    flex-wrap: wrap;
+}
+.find-top-contain #all{
+    color: white;
+    background-color: #E74B3B;
+}
+.Choose-bar{
+    font-size: 1rem;
+    display: flex;
+    height: 3rem;
+    line-height: 3rem;
+    padding-left: 2.8rem;
+}
+.Choose-bar div{
+    width: 5rem;
+
+}
+#solt{
+    position: relative;
+    right: -46rem;
+}
+.find-contain-item{
+    height: 12rem;
+    background-color: white;
+}
+.left-card{
+    width: 20rem;
+    height: 12rem;
+   
+}
+.left-card-top{
+    width: 20rem;
+    height: 12rem;
+    display: flex;
+}
+.avtor{
+    width: 10rem;
+    height: 6rem;
+}
+.avtor img{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    width: 6rem;  
+    height: 6rem;
+    border-radius: 50%;
+}
+.info{
+    width: 14rem;
+    height: 8rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+.right-card-buttom div{
+    width: 5rem;
+    line-height: 2rem;
+    height: 2rem;
+    text-align: center;
+    margin-right: 0.5rem;
+}
+.right-card-buttom{
+    display: flex;
+}
+.right-card-contain{
+    width: 14rem;
+    height:12rem ;
+}
+.right-card-buttom .connect{
+    border:.09rem solid #A7A09E;
+    font-weight: bolder;
+}
+.right-card-buttom .fouck{
+background-color: #E74B3B;   
+color: white;
+}
+.username{
+color: black;
+font-weight: 900;
+font-size: 1.25rem;
+}
+.info #identity{
+color:#7F7A79;
+}
+.info .fensi{
+width: 12rem;
+height: 2rem;
+display: flex;
+}
+.fensi div{
+    width: 5rem;
+}
+.fensi span{
+font-weight: bolder;
+}

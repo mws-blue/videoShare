@@ -10,7 +10,7 @@ const { Header, Content } = Layout;
 class App extends React.Component {
   constructor(){
     super();
-    this.begin = localStorage.getItem("userInfo")!=null?"content-layui":"fixedTop"
+    this.begin = (localStorage.getItem("userInfo")!==null && localStorage.getItem("userInfo")!=="")?"content-layui":"fixedTop"
     this.state={
       page:"main",
       setclass:this.begin,

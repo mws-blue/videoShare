@@ -5,6 +5,7 @@ import LoginMain from "../main/LoginMain";
 import Login from "../login/Login";
 import VideoItem from "../videoDesc/VideoItem"
 import Register from "../register/Register.js";
+import Find from "../find/Find";
 
 class HomeContent extends React.Component {
 	constructor() {
@@ -28,7 +29,7 @@ class HomeContent extends React.Component {
 			}
 		}else if(this.props.currentPage === "find"){
 			return(
-				<div>找人/机构</div>
+				<Find />
 			)
 		}else if(this.props.currentPage === "material"){
 			return(
