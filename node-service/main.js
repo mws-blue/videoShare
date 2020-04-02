@@ -18,6 +18,9 @@ app.use("/*",function(req,res,next){
 
 const userController =new (require("./controller/UserController")) ();
 const homeController = new (require("./controller/HomeController"))();
+const UploadsController = require("./controller/UploadsController.js");
+const uploadController=new UploadsController()
+
 //用户登录
 app.post("/user.do",function(req,res){
 	
@@ -45,6 +48,12 @@ app.post("/profile",upload.single("fileData"),function(req,res,next){
 	res.json({filePath:"http://127.0.0.1:4000/uploads/"+path.basename(req.file.path)});
 })
 
+//上传视频信息到数据库
+app.post("/uploader",function(req,res){
+	
+	uploadController.queryAll(req,res)
+
+})
 
 app.listen(4000,function(){
 	console.log("服务器4000端口。。。。");

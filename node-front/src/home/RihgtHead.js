@@ -22,13 +22,26 @@ class NotLoginHead extends React.Component {
 			localStorage.setItem("userInfo","");
 			console.log("已设置空了"+localStorage.getItem("userInfo"));
 			this.changeMain("main");
+		}else if(e.key==="privacy"){//进入私密视频
+			this.toPrivacy("privacy")
+		}
+		else if(e.key==="upload"){//进入公开视频
+			this.toUpload("upload")
 		}
 	}
    
 	//HomeHead触发
 	changeMain(a){
 		console.log(this.props.headThis);
-		this.props.headThis.handleReback(a);
+		this.props.headThis.handleChanges(a);
+	}
+
+	toUpload(a){
+		this.props.headThis.handleChanges(a)
+	}
+	
+	toPrivacy(a){
+		this.props.headThis.handleChanges(a)
 	}
 
 	render() {
@@ -64,10 +77,9 @@ class NotLoginHead extends React.Component {
 					<li>
 					<Menu style={{borderStyle:"none"}} className="head-menu" onClick={this.handleClick} mode="horizontal">
 					<SubMenu title={<span className="submenu-title-wrapper">上传</span>}>
-						<Menu.Item key="10">新片场影业</Menu.Item>
-						<Menu.Item key="11">新片场短视频</Menu.Item>
-						<Menu.Item key="12">新片场营销 </Menu.Item>
-						<Menu.Item key="13">下载App</Menu.Item>
+						<Menu.Item key="upload">公开作品</Menu.Item>
+						<Menu.Item key="11">发布文章</Menu.Item>
+						<Menu.Item key="12">私密视频 </Menu.Item>
 					</SubMenu>
 				</Menu>
 					</li>

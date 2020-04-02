@@ -1,0 +1,67 @@
+.black{
+    width: 1140px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+  margin-top: 80px;
+}
+.uploadBox{
+    width: 1140px;
+    height: 424px;
+    background-color: white;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.uploadsImg{
+    width: 200px;
+    height: 120px;
+}
+.uploadText{
+    font-size: 20px;
+    margin-top: 5px;
+}
+.cccText{
+    color: #ccc;
+
+}
+.redText{
+    color: red;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.videoBox{
+    width: 1140px;
+    height: 424px;
+    background-color: white;
+    display: flex;
+
+}
+.videoItem{
+    width: 100px;
+    height: 50px;
+    background-color: red;
+}
+.newViedo{
+    opacity:1;
+    width: 500px;
+    height: 200px;
+}
+.showUpload{
+
+    width: 1140px;
+    height: 424px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 20px;
+  
+}
+form ,.fileBtn{
+    margin-left: 20px;
+}
+.showVideo{
+    display: flex;
+}
+

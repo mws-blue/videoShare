@@ -9,46 +9,46 @@ const { SubMenu } = Menu;
 class HomeHeader extends React.Component {
 	constructor() {
 		super();
-		this.beginBgc=(localStorage.getItem("userInfo") !==null && localStorage.getItem("userInfo")!=="")?"loginHead":"notLoginHead";
+		this.beginBgc = (localStorage.getItem("userInfo") !== null && localStorage.getItem("userInfo") !== "") ? "loginHead" : "notLoginHead";
 		this.state = {
-			headSyle:this.beginBgc
+			headSyle: this.beginBgc
 		}
 	}
 
 	handleClick = e => {
-	
+
 		console.log('click ', e.key);
 
 		//改变内容
 		this.props.change.changePage(e.key);
 
-        //改变头部样式 点首页并且有存用户信息
-		if(e.key==="main"){
+		//改变头部样式 点首页并且有存用户信息
+		if (e.key === "main") {
 			//点首页没有登录
-			if(localStorage.getItem("userInfo")===null ||localStorage.getItem("userInfo")==="" ||localStorage.getItem("userInfo")===undefined){
+			if (localStorage.getItem("userInfo") === null || localStorage.getItem("userInfo") === "" || localStorage.getItem("userInfo") === undefined) {
 				this.props.change.changeTop("fixedTop");
 				//设置头部样式
-				this.setState({headSyle:"notLoginHead"});
-			}else{
+				this.setState({ headSyle: "notLoginHead" });
+			} else {
 				// 点首页登录
 				this.props.change.changeTop("content-layui");
-                //设置头部样式
-				this.setState({headSyle:"loginHead"});
+				//设置头部样式
+				this.setState({ headSyle: "loginHead" });
 			}
-			
-		}else{
+
+		} else {
 			//其他
 			this.props.change.changeTop("content-layui");
 
 			//设置头部样式
-			this.setState({headSyle:"loginHead"});
+			this.setState({ headSyle: "loginHead" });
 		}
 	};
 
-	handleChange = e =>{
+	handleChange = e => {
 
 		//设置头部样式
-		this.setState({headSyle:"loginHead"});
+		this.setState({ headSyle: "loginHead" });
 
 		console.log(e.target.id);
 		this.props.change.changePage(e.target.id);
@@ -58,21 +58,30 @@ class HomeHeader extends React.Component {
 	}
 
 	//退出  由RigHthead触发
-	handleReback(a){
-		
-		this.props.change.changePage(a);
-		
-		this.props.change.changeTop("fixedTop");
+	handleChanges(a) {
+		if (a === "main") {
+			this.props.change.changePage(a);
 
-		//设置头部样式
-		this.setState({headSyle:"notLoginHead"});
+			this.props.change.changeTop("fixedTop");
+
+			//设置头部样式
+			this.setState({ headSyle: "notLoginHead" });
+		} else {
+
+			this.props.change.changePage(a);
+
+			this.props.change.changeTop("content-layui");
+
+			//设置头部样式
+			this.setState({ headSyle: "loginHead" });
+		}
 	}
 
 	render() {
 		return (
 			<div className={this.state.headSyle}>
 				<span className="logo-wrap">新片场</span>
-				<Menu style={{borderStyle:"none"}} className="head-menu" onClick={this.handleClick} mode="horizontal">
+				<Menu style={{ borderStyle: "none" }} className="head-menu" onClick={this.handleClick} mode="horizontal">
 					<Menu.Item key="main"> 首页</Menu.Item>
 
 					<SubMenu title={<span className="submenu-title-wrapper">发现</span>}>

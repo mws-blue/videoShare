@@ -30,20 +30,18 @@ class Login extends React.Component {
 		$.ajax({
 			url: "/user.do",
 			type: "post",
-			dataType: "text",
+			dataType: "json",
 			data: {
 				method: "login",
 				userName: this.state.userName,
 				passWord: this.state.passWord
 			},
 			success(res) {
-				let userInfo = JSON.parse(res);
-				console.log("用户信息")
-				console.log(userInfo);
-				console.log(userInfo.userName)
 				
-				localStorage.setItem("userInfo", userInfo);
+				localStorage.setItem("userInfo", res[0]);
+				
 				that.props.change.changePage("main");
+
 			}
 		})
 	}
